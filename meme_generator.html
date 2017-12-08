@@ -1,0 +1,149 @@
+<head>
+	<script>
+		// always called
+		function makethememe() {
+
+			var option = document.getElementById("memetype").value;
+			if (option == "spongebob") {
+				format_spongebob_meme();
+			}
+			else if (option == "napoleon") {
+				format_napoleon_meme();
+			}
+			else if (option == "meancat") {
+				format_mean_cat_meme();
+			}
+			else if (option == "vaporwave") {
+				format_vaporwave_meme();
+			}
+		}
+		// for spongebob meme
+		function format_spongebob_meme() {
+			
+			var makeweird = document.getElementById("maintext").value;
+
+			var size = makeweird.length;
+			var spongebobTEXT = "";
+    		for (var i = 0; i < size; i++) {
+    			const char = makeweird.charAt(i)
+    			if (i % 2 == 0) {
+    				spongebobTEXT += char.toLowerCase();
+    			}
+    			else {
+    				spongebobTEXT += char.toUpperCase();
+    			}
+    		}
+    
+    		document.getElementById("demo").innerHTML = spongebobTEXT;
+    		document.getElementById("memeimage").src = "spongebobmeme.jpg";
+    		document.getElementById("memeimage").width = "500";
+    		document.getElementById("memeimage").height = "400";
+		}
+		// for napoleon meme
+		function format_napoleon_meme() {
+
+			var meme_text = document.getElementById("maintext").value;
+
+			document.getElementById("demo").innerHTML = meme_text;
+    		document.getElementById("memeimage").src = "napoleon.jpg";
+    		document.getElementById("memeimage").width = "500";
+    		document.getElementById("memeimage").height = "400";
+		}
+		// for mean cat meme
+		function format_mean_cat_meme() {
+			var meme_text = document.getElementById("maintext").value;
+
+			document.getElementById("demo").innerHTML = meme_text;
+    		document.getElementById("memeimage").src = "meancat.jpg";
+    		document.getElementById("memeimage").width = "400";
+    		document.getElementById("memeimage").height = "400";
+		}
+		// for vaporwave meme
+		function format_vaporwave_meme() {
+			var meme_text = document.getElementById("maintext").value;
+
+			var size = meme_text.length;
+			var vaporwaveTEXT = "";
+    		for (var i = 0; i < size; i++) {
+    			const char = meme_text.charAt(i)
+    			
+    			vaporwaveTEXT += char.toLowerCase();
+    			vaporwaveTEXT += " ";
+    		}
+
+			document.getElementById("demo").innerHTML = vaporwaveTEXT;
+    		document.getElementById("memeimage").src = "placeholder.jpg"; // GET A REAL IMAGE 
+    		document.getElementById("memeimage").width = "700";
+    		document.getElementById("memeimage").height = "400";
+		}
+		// to reset the meme
+		function reset(){
+			document.getElementById("demo").innerHTML = "";
+			document.getElementById("memeimage").src = "placeholder.jpg";
+			document.getElementById("memeimage").width = "700";
+    		document.getElementById("memeimage").height = "400";
+		}
+	</script>
+</head>
+
+<html>
+	<header>
+		<b>meme maker</b>
+	</header>
+	<body bgcolor="#a8a8c4">
+		<br></br>
+		select meme type:  
+		<select id="memetype">
+  			<option value="spongebob">spongebob</option>
+  			<option value="napoleon">napoleon</option>
+  			<option value="meancat">mean cat</option>
+  			<option value="vaporwave">vaporwave</option>
+		</select>
+		<br></br>
+		enter meme text: <input type="text" id="maintext"/>
+		<input type="button" value="make meme" onclick="makethememe()">
+		<input type="button" value="reset" onclick="reset()">
+
+
+		<br></br>
+		<font face="Impact" size ="10" color="white">
+ 			<div id="demo"></div> </font>
+ 		<div id="picture"><img src="placeholder.jpg" width="700" height="400" id="memeimage"></div>
+		
+		<br></br>
+		<font size="6"> <b>
+			scroll down for meme guidance: 
+		</font> </b>
+			<br></br>
+			<br></br>
+		<font size="5"> Pick from a tender sampling of common meme images:
+			<br></br>
+			spongbob
+			<div id="picture"><img src="spongebobmeme.jpg" width="500" height="400" id="memeimage"></div>
+			<br></br>
+			napoleon
+			<div id="picture"><img src="napoleon.jpg" width="500" height="400" id="memeimage"></div>
+			<br></br>
+			mean cat
+			<div id="picture"><img src="meancat.jpg" width="400" height="400" id="memeimage"></div>
+			<br></br>
+			Each image is wielded in a particular way. As a beginner, it's best you follow suit if you're striving for meme excellence. Get jiggy with it later on in your meme-ing career. Here are some general purpose guidelines for each of the images:
+			<br></br>
+			Use the spongebob image to mock something someone has said or might say. It's generally read in a sarcastic tone.
+			<br></br>
+			<font face="Impact" size ="10" color="white">wOw MeMEs aRe sO cOoL</font>
+			<div id="picture"><img src="spongebobmeme.jpg" width="500" height="400" id="memeimage"></div>
+			<br></br>
+			Use the napoleon image to ....
+			<br></br>
+			<font face="Impact" size ="10" color="white">when your life becomes a meme</font>
+			<div id="picture"><img src="napoleon.jpg" width="500" height="400" id="memeimage"></div>
+			<br></br>
+			Use the mean cat image to ....
+			<br></br>
+			<font face="Impact" size ="10" color="white">memes are in the air? try not to breathe</font>
+			<div id="picture"><img src="meancat.jpg" width="400" height="400" id="memeimage"></div>
+			<br></br>
+		</font> 
+	</body>
+</html>
