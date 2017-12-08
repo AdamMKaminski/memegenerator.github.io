@@ -68,7 +68,9 @@
     			const char = meme_text.charAt(i)
     			
     			vaporwaveTEXT += char.toLowerCase();
-    			vaporwaveTEXT += "&nbsp;&nbsp;&nbsp;";
+    			if (char != " ") {
+    				vaporwaveTEXT += "&nbsp;&nbsp;&nbsp;";
+    			}
     		}
 
 			document.getElementById("demo").innerHTML = vaporwaveTEXT;
